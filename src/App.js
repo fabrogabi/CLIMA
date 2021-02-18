@@ -23,12 +23,18 @@ function App() {
         const repuesta= await fetch(url);
         const resultado= await  repuesta.json();
         guardarResultado(resultado);
-        
         guardarConsultar(false);
+        if(resultado.cod==="404"){guardarError(true)}
+        //else{guardarError(false)}
       }
   }
     consultarApi();
   },[consultar])
+
+  let componente;
+  if (error){componente=<Error mensaje="no existe la ciudad"/>}
+    else{ componente=<Clima 
+      resultado={resultado}/> }
 
 
 
@@ -49,8 +55,7 @@ function App() {
             />
           </div>
           <div className="col-m6-s12">
-            <Clima 
-            resultado={resultado}/>
+           {componente}
           </div>
         </div>
       </div>
