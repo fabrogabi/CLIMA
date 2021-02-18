@@ -2,6 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import Formulario from './components/Formulario';
 import Header from './components/Header';
 import Clima from './components/Clima'
+import Error from './components/Error'
 
 function App() {
   
