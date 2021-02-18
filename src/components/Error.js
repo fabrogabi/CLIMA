@@ -1,7 +1,9 @@
 import React from 'react';
 
-const error = () => {
-    return (  );
+const Error = ({mensaje}) => {
+    return ( 
+        <p className="red darken-4 error"> {mensaje} </p>
+     );
 }
  
-export default error;
+export default Error;
